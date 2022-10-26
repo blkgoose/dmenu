@@ -7,6 +7,8 @@ static const char *fonts[] = {
 	"monospace:size=11"
 };
 static const int bar_height         = 20;
+static const int vertpad            = 5;        /* vertical padding of bar */
+static const int sidepad            = 5;        /* horizontal padding of bar */
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
