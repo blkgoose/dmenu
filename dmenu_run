@@ -2,5 +2,5 @@
 
 dmenu_path \
     | dmenu "$@" \
-    | grep -vxf ~/.config/dmenu/dmenu_ignore \
+    | grep -vxf ~/.config/dmenu_ignore \
     | ${SHELL} &
