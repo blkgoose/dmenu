@@ -712,8 +712,8 @@ setup(void)
 static void
 usage(void)
 {
-	die("usage: dmenu [-bfiv] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
-	    "             [-nb color] [-nf color] [-sb color] [-sf color] [-w windowid]");
+	die("usage: dmenu [-bfiv] [-l lines] [-p prompt] [--fn font] [-m monitor]\n"
+	    "             [--nb color] [--nf color] [--sb color] [--sf color] [-w windowid]");
 }
 
 int
@@ -743,15 +743,15 @@ main(int argc, char *argv[])
 			mon = atoi(argv[++i]);
 		else if (!strcmp(argv[i], "-p"))   /* adds prompt to left of input field */
 			prompt = argv[++i];
-		else if (!strcmp(argv[i], "-fn"))  /* font or font set */
+		else if (!strcmp(argv[i], "--fn"))  /* font or font set */
 			fonts[0] = argv[++i];
-		else if (!strcmp(argv[i], "-nb"))  /* normal background color */
+		else if (!strcmp(argv[i], "--nb"))  /* normal background color */
 			colors[SchemeNorm][ColBg] = argv[++i];
-		else if (!strcmp(argv[i], "-nf"))  /* normal foreground color */
+		else if (!strcmp(argv[i], "--nf"))  /* normal foreground color */
 			colors[SchemeNorm][ColFg] = argv[++i];
-		else if (!strcmp(argv[i], "-sb"))  /* selected background color */
+		else if (!strcmp(argv[i], "--sb"))  /* selected background color */
 			colors[SchemeSel][ColBg] = argv[++i];
-		else if (!strcmp(argv[i], "-sf"))  /* selected foreground color */
+		else if (!strcmp(argv[i], "--sf"))  /* selected foreground color */
 			colors[SchemeSel][ColFg] = argv[++i];
 		else if (!strcmp(argv[i], "-w"))   /* embedding window id */
 			embed = argv[++i];
